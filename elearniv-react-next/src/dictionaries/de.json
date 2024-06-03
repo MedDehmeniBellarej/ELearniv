@@ -1,0 +1,113 @@
+{
+	"homepage": {
+		"home": "Heim",
+		"courses": "Kurse",
+		"about": "Um",
+		"contact": "Kontakt",
+		"faq": "FAQs",
+		"terms": "Terms & amp; Bedingungen",
+		"privacy": "Datenschutzrichtlinie",
+		"explore": "Erkunden",
+		"address": "Adresse",
+		"searchCourses": "Kurse suchen",
+		"empty": "Leer",
+		"total": "Gesamt",
+		"gotocheckout": "Zum Checkout gehen",
+		"loginRegister": "Anmeldung Registrieren",
+		"banner_heading": "Der weltweit führende Fernunterrichtsanbieter",
+		"banner_para": "Flexible, leicht zugängliche Lernmöglichkeiten können die Art und Weise, wie Einzelpersonen lernen möchten, erheblich verändern! Das eLearniv bietet Ihnen die Möglichkeit, die Schönheit des eLearnings zu genießen!",
+		"btnText": "Kurse durchsuchen",
+		"joinFree": "Kostenlos beitreten",
+		"feature": {
+			"subTitle": "BILDUNG FÜR ALLE",
+			"heading": "Erschwingliche Online-Kurse und Lernmöglichkeiten",
+			"helpText": "FDas Finden Ihres eigenen Raums und die Nutzung besserer Lernoptionen kann zu schnelleren Ergebnissen führen als auf herkömmlichen Wegen. Genießen Sie die Schönheit des E-Learnings!",
+			"features": [
+				{
+					"id": 1,
+					"title": "Lernen Sie die neuesten Top-Fähigkeiten",
+					"description": "Das Erlernen von Top-Fähigkeiten kann zu außergewöhnlichen Ergebnissen in Ihrer Karriere führen.",
+					"icon": "flaticon-brain-process"
+				},
+				{
+					"id": 2,
+					"title": "Lernen Sie in Ihrem eigenen Tempo",
+					"description": "Jeder lernt am liebsten in seinem eigenen Tempo und das führt zu tollen Ergebnissen.",
+					"icon": "flaticon-computer"
+				},
+				{
+					"id": 3,
+					"title": "Lernen Sie von Branchenexperten",
+					"description": "Erfahrene Lehrer können mit ihren besten Ansätzen dazu beitragen, schneller zu lernen!",
+					"icon": "flaticon-shield-1"
+				}
+			]
+		},
+		"aboutSection": {
+			"subTitle": "Online lernen",
+			"heading": "Entwickeln Sie Ihre Fähigkeiten, lernen Sie etwas Neues und erweitern Sie Ihre Fähigkeiten von überall auf der Welt!",
+			"helpText": "Wir verstehen besser, dass onlinebasiertes Lernen eine erhebliche Veränderung bewirken kann, um Studierende aus der ganzen Welt zu erreichen! Die Bereitstellung von Optionen zum besseren Lernen kann immer die besten Ergebnisse liefern!",
+			"lists": [
+				{
+					"id": 1,
+					"icon": "flaticon-experience",
+					"text": "Erfahrene Trainer"
+				},
+				{
+					"id": 2,
+					"icon": "flaticon-time-left",
+					"text": "Lebenslanger Zugriff"
+				},
+				{
+					"id": 3,
+					"icon": "flaticon-tutorials",
+					"text": "Fernunterricht"
+				},
+				{
+					"id": 4,
+					"icon": "flaticon-self-growth",
+					"text": "Selbstentwicklung"
+				}
+			]
+		},
+		"viewAllCourses": "Alle Kurse anzeigen",
+		"registerForFree": "Jetzt kostenlos registrieren!",
+		"courseSection": {
+			"subTitle": "LERNEN SIE IN IHREM EIGENEN TEMPO",
+			"heading": "Beliebte eLearniv-Kurse",
+			"helpText": "Entdecken Sie alle unsere Kurse und wählen Sie die passenden Kurse aus, um sich anzumelden und mit dem Lernen bei uns zu beginnen! Wir sorgen dafür, dass Sie es nie bereuen werden!",
+			"info": "Genießen Sie die erstklassigen Lernmethoden und erreichen Sie Fähigkeiten auf dem nächsten Niveau! Sie sind der Schöpfer Ihrer eigenen Karriere und wir begleiten Sie dabei."
+		},
+		"feedbackSection": {
+			"activeLearners": "Aktive Lernende",
+			"enrolledCourses": "Eingeschriebene Kurse",
+			"onlineInstructors": "Online-Lehrer",
+			"onDemandCourses": "On-Demand-Kurse",
+			"subTitle": "Fernunterricht",
+			"heading": "Flexibles Lernen in Ihrem eigenen Tempo, ganz nach Ihren Bedürfnissen",
+			"helpText": "Mit dem eLearniv können Sie lernen, wann und wo immer Sie möchten. Wir haben Studierende in über 175 Ländern und genießen weltweit den Ruf als Pionier auf diesem Gebiet."
+		},
+		"getInstantSection": {
+			"subTitle": "Erhalten Sie sofortigen Zugriff auf The Free",
+			"heading": "Selbstentwicklungskurs",
+			"helpText": "Der eLearniv-Selbstentwicklungskurs kann Ihnen dabei helfen, bedeutende Veränderungen in Ihrem persönlichen Verständnis herbeizuführen und das Selbstvertrauen neu zu formen, um das Beste aus Ihrer Karriere herauszuholen! Wir sind davon überzeugt, dass Lernen Spaß machen sollte, und nur das kann wesentliche Veränderungen bewirken!"
+		},
+		"distanceLearning": {
+			"subTitle": "Fernunterricht",
+			"heading": "eLearniv-Schulungsprogramme können Ihnen ein super spannendes Online-Lernerlebnis bieten! Sie erleben keine negativen Erfahrungen, während Sie Ihre Kurse virtuell genießen, indem Sie in Ihrer Komfortzone sitzen. Unsere flexiblen Lerninitiativen helfen Ihnen, besser und schneller zu lernen als die traditionellen Lernmethoden."
+		},
+		"reviewMyWishlist": "Meine Wunschliste überprüfen",
+		"premiumAccess": {
+			"subTitle": "Erschwingliche Zertifizierung",
+			"heading": "Erhalten Sie Ihr Qualitätszertifikat durch Online-Prüfung",
+			"helpText": "Studentenfreundliche Preise für die Zertifikatsprogramme helfen Einzelpersonen, ihr Qualifikationszertifikat einfacher als je zuvor zu erhalten!"
+		},
+		"subscribeArea": {
+			"subTitle": "Gehen Sie in Ihrem eigenen Tempo",
+			"heading": "Abonnieren Sie unseren Newsletter",
+			"helpText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporary incididunt ut mühsam und dolore magna aliqua.",
+			"placeholder": "Geben Sie Ihre E-Mail-Adresse ein",
+			"subscribeNow": "Jetzt abonnieren"
+		}
+	}
+}
