@@ -19,7 +19,7 @@ const Videos = ({ videos }) => {
 		}
 	};
 	return (
-		<div className="row gap-0 row-gap-3">
+		<div className="row gap-0 row-gap-3"> 	
 			{videos.length > 0
 				? videos.map((video) => (
 						<CourseVideos

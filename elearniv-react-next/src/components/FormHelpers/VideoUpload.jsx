@@ -11,7 +11,7 @@ const VideoUpload = ({ onChange, value, label }) => {
 	const handleUpload = useCallback(
 		(result) => {
 			onChange(result.info);
-			// console.log(result);
+			console.log(result);
 		},
 		[onChange]
 	);

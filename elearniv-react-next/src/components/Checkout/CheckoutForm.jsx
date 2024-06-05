@@ -6,14 +6,44 @@ import { loadStripe } from "@stripe/stripe-js";
 import CheckoutList from "./CheckoutList";
 import { cartAmoutSub, cartTotal } from "@/utils/cartTotal";
 import PaymentForm from "./PaymentForm";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+
 
 const stripePromise = loadStripe(process.env.STRIPE_PUBLISHABLE_KEY);
 
 const CheckoutForm = ({ lang }) => {
 	const { count, cart, remove } = useCartStore();
+	const router = useRouter();
+
 	const handleRemove = async (cartId) => {
 		remove(cartId);
 	};
+
+	const handleFreeEnrollment = async () => {
+		try {
+			console.log("Starting free enrollment process...");
+			const { data } = await axios.post("/api/checkout/free-enrollment", {
+				data: { cart },
+			});
+	
+			console.log("API Response:", data);
+	
+			if (data.message === "Successfully enrolled in free courses.") {
+				toast.success(data.message);
+				handleRemove();
+				router.push("/learning/my-courses");
+			} else {
+				toast.error(data.message);
+			}
+		} catch (error) {
+			console.error("Error enrolling in free courses:", error);
+			toast.error("Error enrolling in free courses.");
+		}
+	};
+
+	const total = cartTotal(cart);
 
 	return (
 		<>
@@ -78,10 +108,19 @@ const CheckoutForm = ({ lang }) => {
 									cartItems={cartItems}
 								/> */}
 								<hr />
-								<Elements stripe={stripePromise}>
-									<PaymentForm />
-								</Elements>
-							</div>
+								{total > 0 ? (
+                                    <Elements stripe={stripePromise}>
+                                        <PaymentForm />
+                                    </Elements>
+                                ) : (
+                                    <button
+                                        className="default-btn"
+										onClick={handleFreeEnrollment}
+                                    >
+                                        Enroll for Free
+                                    </button>
+                                )}
+                            </div>
 						)}
 					</div>
 				</div>
