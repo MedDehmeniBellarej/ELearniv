@@ -39,6 +39,13 @@ const Page = async ({ params: { lang } }) => {
 											New Arrival
 										</Link>
 									</li>
+									<li>
+										<Link
+											href={`/${lang}/admin/courses/assigned-courses/`}
+										>
+											Assigned Courses
+										</Link>
+									</li>
 								</ul>
 								<CoursesTable courses={courses} lang={lang} />
 							</div>

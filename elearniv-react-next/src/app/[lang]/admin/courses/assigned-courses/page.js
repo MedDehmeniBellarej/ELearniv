@@ -2,12 +2,16 @@ import React from "react";
 import Link from "next/link";
 import Table from "./Table";
 import AdminSideNav from "@/components/Layout/AdminSideNav";
-import { getCurrentUser } from "@/actions/getCurrentUser";
-import { getNewCourses } from "@/actions/admin/getCoursesAdmin";
+import { getCurrentUser ,  } from "@/actions/getCurrentUser";
+import { getCoursesAdmin } from "@/actions/admin/getCoursesAdmin";
+import { getStudents } from "@/actions/admin/getStudents";
+import { getAssigne } from "@/actions/admin/getAssigne";
 
 const Page = async ({ params: { lang } }) => {
 	const currentUser = await getCurrentUser();
-	const { courses } = await getNewCourses();
+	const { courses } = await getCoursesAdmin();
+	const { students } = await getStudents();
+	const {assigne} = await getAssigne();
 	return (
 		<>
 			<div className="main-content">
@@ -31,7 +35,7 @@ const Page = async ({ params: { lang } }) => {
 									<li>
 										<Link
 											href={`/${lang}/admin/courses/new-arrival/`}
-											className="active"
+											
 										>
 											New Arrival
 										</Link>
@@ -39,13 +43,14 @@ const Page = async ({ params: { lang } }) => {
 									<li>
 										<Link
 											href={`/${lang}/admin/courses/assigned-courses/`}
+                                            className="active"
 										>
 											Assigned Courses
 										</Link>
 									</li>
 								</ul>
 
-								<Table courses={courses} lang={lang} />
+								<Table students={students} courses={courses} lang={lang} />
 							</div>
 						</div>
 					</div>

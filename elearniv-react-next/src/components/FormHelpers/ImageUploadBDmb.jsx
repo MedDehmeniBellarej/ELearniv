@@ -9,14 +9,18 @@ import axios from 'axios';
 const VideoUploaderComponent = () => {
   const [uploadResult, setUploadResult] = useState(null);
   const [uploadError, setUploadError] = useState(null);
-
+  const iconStyle = {
+    width: '18px',  // Adjust the size as needed
+    height: '18px'
+  };
 
   return (
     <div>
       <BmdrmVideoUploader
         bmdrmUploader={{
-          deleteIcon: <img src='' alt='test' />,
-          videoIcon: <img src='' alt='test' />,
+          icon: <img src='/images/upload.png' alt='test'  style={iconStyle} />,
+          deleteIcon: <img src='/images/cancel.png' alt='test'  style={iconStyle} />,
+          videoIcon: <img src='/images/video.png' alt='test'  style={iconStyle} />,
           btnStyle: {
             background: 'green',
             color: 'white',
@@ -43,7 +47,7 @@ const VideoUploaderComponent = () => {
             backgroundColor: 'white',
             headerBackgroundColor: 'black',
             color: 'green',
-            headerFontColor: 'white',
+            headerFontColor: 'red',
             videoIcon: <i className='ri-computer-line text-[30px]' />,
             cancelIcon: <i className='ri-computer-line text-[30px]' />,
             checkIcon: <i className='ri-computer-line text-[30px]' />

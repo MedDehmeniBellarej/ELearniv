@@ -10,7 +10,7 @@ const CourseAdvisor = () => {
 				<div className="container">
 					<div className="section-title">
 						<span className="sub-title">Instructor</span>
-						<h2>Course Advisor</h2>
+						<h2>Course  Advisor</h2>
 						<p>
 							Lorem ipsum dolor sit amet, consectetur adipiscing
 							elit, sed do eiusmod tempor incididunt ut labore et
