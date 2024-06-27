@@ -52,6 +52,18 @@ export async function myLearningPlay(params) {
 						},
 					},
 				},
+				discussions: {
+					orderBy: { id: "desc" },
+					include: {
+						user: {
+							select: {
+								name: true,
+								image: true,
+							},
+						},
+					},
+				}
+				
 			},
 		});
 

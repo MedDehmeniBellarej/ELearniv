@@ -2,7 +2,7 @@ import { getCurrentUser } from "@/actions/getCurrentUser";
 import { NextResponse } from "next/server";
 import prisma from "@/libs/prismadb";
 
-export async function POST(request) {
+export async function PATCH(request) {
   const currentUser = await getCurrentUser();
   if (!currentUser || currentUser.role !== "ADMIN") {
     return NextResponse.json(
@@ -13,7 +13,7 @@ export async function POST(request) {
     );
   }
 
-  const { courseId, assignedUserId } = await request.json();
+  const { courseId, assignedUserId, action } = await request.json();
 
   if (!courseId || !assignedUserId) {
     return NextResponse.json(
@@ -24,51 +24,54 @@ export async function POST(request) {
     );
   }
 
+  
   try {
-    // Check if the user is already assigned to the course
-    const existingAssignment = await prisma.enrolment.findFirst({
-      where: {
-        userId: assignedUserId,
-        courseId: courseId,
-      },
-    });
+    console.log(" dd " ,courseId, assignedUserId, action);
+    if (action === 'assign') {
+    
+      // Assign the course to the user
+      await prisma.enrolment.create({
+        data: {
+          userId: assignedUserId,
+          courseId: courseId,
+          order_number: generateOrderNumber(),
+          price: 0, // assuming the assignment is free, adjust as needed
+          paymentId: null,
+          payment_via: "Admin",
+          payment_status: "PAID",
+          status: "PAID",
+        },
+      });
 
-    if (existingAssignment) {
       return NextResponse.json(
         {
-          alreadyAssigned: true,
-          message: "User is already assigned to this course.",
+          success: true,
+          message: "Course assigned successfully.",
+        },
+        { status: 200 }
+      );
+    } else if (action === 'unassign') {
+      // Unassign the course from the user
+      await prisma.enrolment.deleteMany({
+        where: {
+          userId: assignedUserId,
+          courseId: courseId,
+        },
+      });
+
+      return NextResponse.json(
+        {
+          success: true,
+          message: "Course unassigned successfully.",
         },
         { status: 200 }
       );
     }
-
-    // Assign the course to the user
-    await prisma.enrolment.create({
-      data: {
-        userId: assignedUserId,
-        courseId: courseId,
-        order_number: generateOrderNumber(),
-        price: 0, // assuming the assignment is free, adjust as needed
-        paymentId: null,
-        payment_via: "Admin",
-        payment_status: "PAID",
-        status: "PAID",
-      },
-    });
-
-    return NextResponse.json(
-      {
-        success: true,
-        message: "Course assigned successfully.",
-      },
-      { status: 200 }
-    );
   } catch (error) {
-    console.error("Error assigning course:", error);
+    console.error("Error assigning/unassigning course:", error);
     return NextResponse.json(
       {
-        message: "Error assigning course.",
+        message: "Error assigning/unassigning course.",
         error: error.message,
       },
       { status: 500 }

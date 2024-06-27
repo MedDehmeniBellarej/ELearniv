@@ -7,18 +7,16 @@ const StudentRow = ({ id, name, email, image, isAssigned, onAssign }) => {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: "10px",
+    padding: "10px 10px",
     backgroundColor: "#fff",
-    borderRadius: "8px",
-    marginBottom: "10px",
-    boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)",
+    maxWidth: "100%",
   };
 
   const studentAvatarStyle = {
     width: "40px",
     height: "40px",
     borderRadius: "50%",
-    marginRight: "10px",
+    marginRight: "15px",
   };
 
   const studentInfoStyle = {
@@ -26,18 +24,18 @@ const StudentRow = ({ id, name, email, image, isAssigned, onAssign }) => {
     display: "flex",
     flexDirection: "column",
   };
-
-  const buttonStyle = {
-    padding: "5px 10px",
-    border: "none",
-    borderRadius: "12px",
-    backgroundColor: isAssigned ? "#6c757d" : "#0070f3",
-    color: "#fff",
-    cursor: isAssigned ? "default" : "pointer",
+  const checkboxStyle = {
+    width: "20px", // Adjust the size of the checkbox
+    height: "20px",
+    cursor: "pointer",
+    border: "2px solid #666", // Add a solid border
+    appearance: "none", // Remove default appearance
+    borderRadius: "3px", // Optional: add some border radius
+    outline: "none", // Remove default outline on focus
   };
 
-  const buttonHoverStyle = {
-    backgroundColor: "#005bb5",
+  const handleCheckboxChange = () => {
+    onAssign(id, isAssigned ? 'unassign' : 'assign');
   };
 
   return (
@@ -47,17 +45,25 @@ const StudentRow = ({ id, name, email, image, isAssigned, onAssign }) => {
         <p style={{ margin: 0 }}>{name}</p>
         <p style={{ margin: 0, fontSize: "0.8em", color: "#666" }}>{email}</p>
       </div>
-      <button
-        style={buttonStyle}
-        onMouseOver={(e) => !isAssigned && (e.currentTarget.style.backgroundColor = buttonHoverStyle.backgroundColor)}
-        onMouseOut={(e) => !isAssigned && (e.currentTarget.style.backgroundColor = buttonStyle.backgroundColor)}
-        onClick={() => !isAssigned && onAssign(id)}
-      >
-        {isAssigned ? "Assigned" : "Assign"}
-      </button>
+      <div className="form-check">
+        <input 
+          className="form-check-input" 
+          type="checkbox" 
+          id={`flexCheck${id}`} 
+          checked={isAssigned} 
+          onChange={handleCheckboxChange}
+          style={checkboxStyle}
+          
+        />
+       {/* <label className="form-check-label" htmlFor={`flexCheck${id}`}>
+          {isAssigned ? "Assigned" : "Assign"}
+        </label>*/}
+      </div>
     </div>
   );
 };
 
 export default StudentRow;
+
+
 

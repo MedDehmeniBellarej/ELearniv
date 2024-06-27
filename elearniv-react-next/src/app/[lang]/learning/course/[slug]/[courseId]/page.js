@@ -5,7 +5,8 @@ import Content from "../../Content";
 
 const page = async ({ params }) => {
 	const { course } = await myLearningPlay(params);
-	 console.log(course);
+    //console.log(course);
+	//console.log(course.discussions.user);
 	// const { reviewsAndAssets } = await courseReviewsAndAssets(params);
 
 	return (

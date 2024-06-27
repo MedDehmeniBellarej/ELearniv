@@ -28,26 +28,32 @@ const Table = ({ courses, students, lang }) => {
 		}
 	  }, [selectedCourse]);
 
-	const handleAssignCourse = async (userId, courseId) => {
+	const handleAssignCourse = async (userId, courseId , action) => {
 		try {
-			const response = await axios.post("/api/admin/assign-course", {
+			const response = await axios.patch("/api/admin/assign-course", {
 			  courseId,
 			  assignedUserId: userId,
+			  action : action
 			});
 			console.log(courseId, userId)
 	  
 			if (response.data.alreadyAssigned) {
 				toast.error("User is already assigned to this course.");
-			} else {
-				toast.success("Course assigned successfully!");
-				setAssignedStudents((prev) => [...prev, userId]);
-
+			  } else {
+				if (action === 'assign') {
+				  toast.success("Course assigned successfully!");
+				  setAssignedStudents((prev) => [...prev, userId]);
+				} else {
+				  toast.success("Course unassigned successfully!");
+				  setAssignedStudents((prev) => prev.filter(id => id !== userId));
+				}
+			  }
+			} catch (error) {
+			  console.error("Error assigning/unassigning course", error);
+			  toast.error("Failed to assign/unassign course.");
 			}
-		  } catch (error) {
-			console.error("Error assigning course", error);
-			toast.error("Failed to assign course.");
-		  }
-		};
+		  };
+
 	const openModal = (courseId) => {
 		setSelectedCourse(courseId);
 		setIsModalOpen(true);
@@ -99,7 +105,7 @@ const Table = ({ courses, students, lang }) => {
 				isOpen={isModalOpen}
 				onRequestClose={() => setIsModalOpen(false)}
 				students={students}
-				onAssign={(userId) => handleAssignCourse(userId, selectedCourse)}
+				onAssign={(userId,action) => handleAssignCourse(userId, selectedCourse,action)}
 				assignedStudents={assignedStudents}
 
 

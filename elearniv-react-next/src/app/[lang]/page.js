@@ -21,10 +21,12 @@ export const metadata = {
 export default async function Page({ params: { lang } }) {
 	const dict = await getDictionary(lang);
 	const { courses } = await getBannerCourses();
-	const { home_courses } = await getHomepageCourses();
+	const { home_courses } = await getHomepageCourses(); 
 	const currentUser = await getCurrentUser();
 	const { partners } = await getPartners();
 	const { testimonials } = await getTestimonials();
+
+
 	// console.log(courses);
 	return (
 		<>

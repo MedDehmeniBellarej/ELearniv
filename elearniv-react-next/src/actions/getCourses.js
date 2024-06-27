@@ -111,11 +111,13 @@ export async function getBannerCourses() {
 				},
 			},
 		});
-
-		// console.log(courses);
-
+		if (!courses || courses.length === 0) {
+			throw new Error('No courses found');
+		}
+		console.log(courses);
 		return { courses };
 	} catch (error) {
 		console.error("Error fetching counts:", error);
+		return null; // or any fallback value
 	}
 }

@@ -3,9 +3,11 @@
 import CourseAsset from "@/components/Learning/CourseAsset";
 import CourseFeedback from "@/components/Learning/CourseFeedback";
 import CourseOverview from "@/components/Learning/CourseOverview";
+import CourseDiscussion from "@/components/Learning/CourseDiscussion";
+import CourseChatChannelComponent from "@/components/Learning/CourseChatChannel"
 import React, { useState } from "react";
 
-const Content = ({ id, overview, reviews }) => {
+const Content = ({ id, overview, reviews , discussions}) => {
 	const [tab, setTab] = useState("overview");
 
 	return (
@@ -44,12 +46,39 @@ const Content = ({ id, overview, reviews }) => {
 						Leave a feedback
 					</div>
 				</li>
+				<li>
+					<div
+						onClick={(e) => {
+							e.preventDefault();
+							setTab("discussion");
+						}}
+						className={tab == "discussion" ? "active" : ""}
+					>
+						discussion
+					</div>
+				</li>
+				<li>
+                    <div
+                        onClick={(e) => {
+                         e.preventDefault();
+                          setTab("chat");
+                        }}
+                       className={tab == "chat" ? "active" : ""}
+                    >
+                       Chat
+                    </div>
+                </li>
+				
 			</ul>
 
 			{tab == "asset" ? (
 				<CourseAsset courseId={id} />
 			) : tab == "feedback" ? (
 				<CourseFeedback courseId={id} reviews={reviews} />
+			) : tab === "discussion" ? (
+				<CourseDiscussion courseId={id} discussions={discussions} />
+			) : tab === "chat" ? (
+				<CourseChatChannelComponent channelId={`course-${id}`} /> // Pass the course ID as the channel ID
 			) : (
 				<CourseOverview overview={overview} />
 			)}
