@@ -19,6 +19,7 @@ export async function getCurrentUser() {
 				email: session.user.email,
 			},
 			include: {
+				
 				profile: true,
 				favourites: true,
 			},

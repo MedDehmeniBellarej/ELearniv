@@ -1,4 +1,3 @@
-// components/StreamChatComponent.js
 "use client";
 import React, { useEffect, useState } from "react";
 import { StreamChat } from 'stream-chat';
@@ -8,20 +7,11 @@ import {
   ChannelHeader,
   MessageList,
   MessageInput,
-  Window,
-  Thread,
-  LoadingIndicator 
+  Window
 } from 'stream-chat-react';
 import 'stream-chat-react/dist/css/index.css';
 
-const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY; // Use environment variable for API key
-
-const user = {
-  id: '6', // Replace with actual user ID
-  name: 'John Doe', // Replace with actual user name
-  image: 'https://res.cloudinary.com/dev-empty/image/upload/v1712139903/typ3uhxza7v9wv5w48ch.jpg', // Replace with actual user image URL
-};
-
+const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
 const chatClient = StreamChat.getInstance(apiKey);
 
 const fetchToken = async (userId) => {
@@ -31,46 +21,65 @@ const fetchToken = async (userId) => {
     return data.token;
   } catch (error) {
     console.error('Error fetching token:', error);
+    throw error; // Rethrow to handle in the calling function
   }
 };
 
-const CourseChatChannelComponent = ({ channelId }) => {
+const CourseChatChannelComponent = ({ currentUser, channelId }) => {
   const [userToken, setUserToken] = useState(null);
   const [channel, setChannel] = useState(null);
-  const userId = user.id;
+  const [loading, setLoading] = useState(true);
+  const user = {
+    id: String(currentUser.id),
+    name: currentUser.name,
+    image: currentUser.image,
+  };
 
   useEffect(() => {
     const initializeChat = async () => {
       try {
-        const token = await fetchToken(userId);
+        console.log('Initializing chat for user:', user);
+
+        const token = await fetchToken(user.id);
         console.log('Fetched token:', token);
         setUserToken(token);
 
         await chatClient.connectUser(user, token);
         console.log('User connected');
 
-        const newChannel = chatClient.channel('messaging', channelId, {
-          name: 'Course Chat Channel',
-        });
-        await newChannel.watch();
-        console.log('Channel created and watched:', newChannel);
-        setChannel(newChannel);
+        const existingChannel = chatClient.channel('messaging', channelId);
+        
+        // Check if the user is already a member before adding
+        const channelState = await existingChannel.query();
+        const isMember = channelState.members.some(member => member.user_id === user.id);
+
+        if (!isMember) {
+          await existingChannel.addMembers([user.id]);
+        }
+
+        await existingChannel.watch();
+        console.log('Channel fetched and watched:', existingChannel);
+        setChannel(existingChannel);
       } catch (error) {
         console.error('Error initializing chat:', error);
+      } finally {
+        setLoading(false); // Ensure loading is set to false regardless of success or failure
       }
     };
 
     initializeChat();
 
     return () => {
+      console.log('Cleaning up chat client');
       chatClient.disconnectUser();
     };
-  }, [userId, channelId]);
+  }, [user.id, channelId]);
 
-  if (!userToken || !channel) return <div>Loading...</div>;
+  if (loading) return <div>Loading...</div>;
+  if (!userToken || !channel) return <div>Error initializing chat. Please try again later.</div>;
 
   return (
-    <div>
+    <div className="chat-wrapper">
       <Chat client={chatClient} theme="messaging light">
         <Channel channel={channel}>
           <Window>
@@ -85,3 +94,4 @@ const CourseChatChannelComponent = ({ channelId }) => {
 };
 
 export default CourseChatChannelComponent;
+

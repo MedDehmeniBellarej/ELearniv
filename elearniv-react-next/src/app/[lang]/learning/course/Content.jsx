@@ -7,7 +7,7 @@ import CourseDiscussion from "@/components/Learning/CourseDiscussion";
 import CourseChatChannelComponent from "@/components/Learning/CourseChatChannel"
 import React, { useState } from "react";
 
-const Content = ({ id, overview, reviews , discussions}) => {
+const Content = ({ id, overview, reviews , discussions , currentUser }) => {
 	const [tab, setTab] = useState("overview");
 
 	return (
@@ -78,7 +78,7 @@ const Content = ({ id, overview, reviews , discussions}) => {
 			) : tab === "discussion" ? (
 				<CourseDiscussion courseId={id} discussions={discussions} />
 			) : tab === "chat" ? (
-				<CourseChatChannelComponent channelId={`course-${id}`} /> // Pass the course ID as the channel ID
+				<CourseChatChannelComponent currentUser={currentUser} channelId={`course-${id}`} /> // Pass the course ID as the channel ID
 			) : (
 				<CourseOverview overview={overview} />
 			)}
