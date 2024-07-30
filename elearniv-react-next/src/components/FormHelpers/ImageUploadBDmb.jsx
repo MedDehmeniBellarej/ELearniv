@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { BmdrmVideoUploader } from 'video_uploader_bmdrm';
+import { BmdrmVideoUploader,useProgressListener } from 'video_uploader_bmdrm'
 import axios from 'axios';
 
 
@@ -13,6 +13,12 @@ const VideoUploaderComponent = () => {
     width: '18px',  // Adjust the size as needed
     height: '18px'
   };
+
+  const inProgressVideo = useProgressListener()
+  const videosIds = inProgressVideo.map((video) => video.uploadJobId)
+  console.log("progress  : " , inProgressVideo )
+  console.log("videosIds  : " , videosIds )
+ 
 
   return (
     <div>
