@@ -2,7 +2,7 @@ import CheckoutForm from "@/components/Checkout/CheckoutForm";
 import PageBanner from "@/components/Shared/PageBanner";
 
 export const metadata = {
-	title: "Checkout | eLearniv - React Next.js Learning Management System",
+	title: "Checkout | StudyGrove - React Next.js Learning Management System",
 };
 
 const page = async ({ params: { lang } }) => {

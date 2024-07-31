@@ -2,7 +2,7 @@ import ForgotPasswordForm from "@/components/Auth/ForgotPasswordForm";
 import PageBanner from "@/components/Shared/PageBanner";
 
 export const metadata = {
-	title: "Forgot Password | eLearniv - React Next.js Learning Management System",
+	title: "Forgot Password | StudyGrove - React Next.js Learning Management System",
 };
 
 const page = ({ params: { lang } }) => {

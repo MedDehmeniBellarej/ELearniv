@@ -24,7 +24,7 @@ const ShortingDropdown = () => {
 	};
 
 	return (
-		<div className="elearniv-grid-sorting row align-items-center mb-5">
+		<div className="StudyGrove-grid-sorting row align-items-center mb-5">
 			<div className="col-lg-4 col-md-6 ordering">
 				<div className="select-box">
 					<select

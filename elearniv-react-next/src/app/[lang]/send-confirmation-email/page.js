@@ -3,7 +3,7 @@ import PageBanner from "@/components/Shared/PageBanner";
 import React from "react";
 
 export const metadata = {
-	title: "Send COnfirmation Email | eLearniv - React Next.js Learning Management System",
+	title: "Send COnfirmation Email | StudyGrove - React Next.js Learning Management System",
 };
 
 const page = async ({ params: { lang } }) => {

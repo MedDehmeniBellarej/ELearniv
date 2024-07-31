@@ -28,9 +28,9 @@ const Footer = ({
 							<div className="single-footer-widget">
 								<Link href={`/${lang}/`} className="logo">
 									<Image
-										src="/images/logo2.png"
-										width={120}
-										height={40}
+										src="/images/StudyGrove-White.png"
+										width={220}
+										height={60}
 										alt="logo"
 									/>
 								</Link>
@@ -124,24 +124,24 @@ const Footer = ({
 									<li>
 										<i className="bx bx-map"></i>
 										2750 Quadra Street Golden Victoria Road,
-										New York, USA
+										Sousse
 									</li>
 									<li>
 										<i className="bx bx-phone-call"></i>
 										<a href="tel:+44587154756">
-											+1 (123) 456 7890
+											+ (216) 99 999 999
 										</a>
 									</li>
 									<li>
 										<i className="bx bx-envelope"></i>
-										<a href="mailto:hello@elearniv.com">
-											hello@eLearniv.com
+										<a href="mailto:hello@StudyGrove.com">
+											hello@Sane.com
 										</a>
 									</li>
 									<li>
 										<i className="bx bxs-inbox"></i>
 										<a href="tel:+557854578964">
-											+55 785 4578964
+											+216 9999999
 										</a>
 									</li>
 								</ul>
@@ -154,13 +154,13 @@ const Footer = ({
 							<div className="col-lg-6 col-md-6">
 								<p>
 									<i className="bx bx-copyright"></i>
-									{currentYear} eLearniv is Proudly Powered by{" "}
+									{currentYear} Study Grove is Proudly Powered by{" "}
 									<a
 										target="_blank"
-										href="https://envytheme.com/"
-										rel="noreferrer"
+										href="https://Sane.agency/"
+										rel="noreferrer" 
 									>
-										EnvyTheme
+										Sane
 									</a>
 								</p>
 							</div>

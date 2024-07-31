@@ -2,7 +2,7 @@ import PageBanner from "@/components/Shared/PageBanner";
 import PolicyContent from "./PolicyContent";
 
 export const metadata = {
-	title: "Privacy Policy | eLearniv - React Next.js Learning Management System",
+	title: "Privacy Policy | StudyGrove - React Next.js Learning Management System",
 };
 
 const page = async ({ params: { lang } }) => {

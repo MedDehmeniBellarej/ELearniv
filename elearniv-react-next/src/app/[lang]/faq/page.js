@@ -4,7 +4,7 @@ import FaqContent from "./FaqContent";
 import { getDictionary } from "../dictionaries";
 
 export const metadata = {
-	title: "FAQ's | eLearniv - React Next.js Learning Management System",
+	title: "FAQ's | StudyGrove - React Next.js Learning Management System",
 };
 
 const page = async ({ params: { lang } }) => {

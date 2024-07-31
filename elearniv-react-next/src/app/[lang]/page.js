@@ -15,7 +15,7 @@ import ViewAllCourses from "@/components/eLearningSchool/ViewAllCourses";
 import { getDictionary } from "./dictionaries";
 
 export const metadata = {
-	title: "Home | eLearniv - React Next.js Learning Management System",
+	title: "Home | StudyGrove - React Next.js Learning Management System",
 };
 
 export default async function Page({ params: { lang } }) {

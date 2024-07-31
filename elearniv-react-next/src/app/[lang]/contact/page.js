@@ -4,7 +4,7 @@ import GoogleMap from "@/components/ContactUs/GoogleMap";
 import PageBanner from "@/components/Shared/PageBanner";
 
 export const metadata = {
-	title: "Contact | eLearniv - React Next.js Learning Management System",
+	title: "Contact | StudyGrove - React Next.js Learning Management System",
 };
 
 const page = ({ params: { lang } }) => {

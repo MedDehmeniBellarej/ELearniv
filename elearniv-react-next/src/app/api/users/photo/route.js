@@ -7,7 +7,9 @@ export async function POST(request) {
 	if (!currentUser) {
 		return NextResponse.error();
 	}
+
 	const body = await request.json();
+	console.log("request body" , body);
 	const { image } = body;
 
 	await prisma.user.update({

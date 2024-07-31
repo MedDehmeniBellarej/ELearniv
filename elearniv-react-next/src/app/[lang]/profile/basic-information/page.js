@@ -3,7 +3,7 @@ import Link from "next/link";
 import InfoForm from "./InfoForm";
 
 export const metadata = {
-	title: "Basic Profile Info | eLearniv - React Next.js Learning Management System",
+	title: "Basic Profile Info | StudyGrove - React Next.js Learning Management System",
 };
 
 const page = async ({ params: { lang } }) => {

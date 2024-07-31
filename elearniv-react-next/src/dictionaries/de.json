@@ -15,7 +15,7 @@
 		"gotocheckout": "Zum Checkout gehen",
 		"loginRegister": "Anmeldung Registrieren",
 		"banner_heading": "Der weltweit führende Fernunterrichtsanbieter",
-		"banner_para": "Flexible, leicht zugängliche Lernmöglichkeiten können die Art und Weise, wie Einzelpersonen lernen möchten, erheblich verändern! Das eLearniv bietet Ihnen die Möglichkeit, die Schönheit des eLearnings zu genießen!",
+		"banner_para": "Flexible, leicht zugängliche Lernmöglichkeiten können die Art und Weise, wie Einzelpersonen lernen möchten, erheblich verändern! Das StudyGrove bietet Ihnen die Möglichkeit, die Schönheit des eLearnings zu genießen!",
 		"btnText": "Kurse durchsuchen",
 		"joinFree": "Kostenlos beitreten",
 		"feature": {
@@ -74,7 +74,7 @@
 		"registerForFree": "Jetzt kostenlos registrieren!",
 		"courseSection": {
 			"subTitle": "LERNEN SIE IN IHREM EIGENEN TEMPO",
-			"heading": "Beliebte eLearniv-Kurse",
+			"heading": "Beliebte StudyGrove-Kurse",
 			"helpText": "Entdecken Sie alle unsere Kurse und wählen Sie die passenden Kurse aus, um sich anzumelden und mit dem Lernen bei uns zu beginnen! Wir sorgen dafür, dass Sie es nie bereuen werden!",
 			"info": "Genießen Sie die erstklassigen Lernmethoden und erreichen Sie Fähigkeiten auf dem nächsten Niveau! Sie sind der Schöpfer Ihrer eigenen Karriere und wir begleiten Sie dabei."
 		},
@@ -85,16 +85,16 @@
 			"onDemandCourses": "On-Demand-Kurse",
 			"subTitle": "Fernunterricht",
 			"heading": "Flexibles Lernen in Ihrem eigenen Tempo, ganz nach Ihren Bedürfnissen",
-			"helpText": "Mit dem eLearniv können Sie lernen, wann und wo immer Sie möchten. Wir haben Studierende in über 175 Ländern und genießen weltweit den Ruf als Pionier auf diesem Gebiet."
+			"helpText": "Mit dem StudyGrove können Sie lernen, wann und wo immer Sie möchten. Wir haben Studierende in über 175 Ländern und genießen weltweit den Ruf als Pionier auf diesem Gebiet."
 		},
 		"getInstantSection": {
 			"subTitle": "Erhalten Sie sofortigen Zugriff auf The Free",
 			"heading": "Selbstentwicklungskurs",
-			"helpText": "Der eLearniv-Selbstentwicklungskurs kann Ihnen dabei helfen, bedeutende Veränderungen in Ihrem persönlichen Verständnis herbeizuführen und das Selbstvertrauen neu zu formen, um das Beste aus Ihrer Karriere herauszuholen! Wir sind davon überzeugt, dass Lernen Spaß machen sollte, und nur das kann wesentliche Veränderungen bewirken!"
+			"helpText": "Der StudyGrove-Selbstentwicklungskurs kann Ihnen dabei helfen, bedeutende Veränderungen in Ihrem persönlichen Verständnis herbeizuführen und das Selbstvertrauen neu zu formen, um das Beste aus Ihrer Karriere herauszuholen! Wir sind davon überzeugt, dass Lernen Spaß machen sollte, und nur das kann wesentliche Veränderungen bewirken!"
 		},
 		"distanceLearning": {
 			"subTitle": "Fernunterricht",
-			"heading": "eLearniv-Schulungsprogramme können Ihnen ein super spannendes Online-Lernerlebnis bieten! Sie erleben keine negativen Erfahrungen, während Sie Ihre Kurse virtuell genießen, indem Sie in Ihrer Komfortzone sitzen. Unsere flexiblen Lerninitiativen helfen Ihnen, besser und schneller zu lernen als die traditionellen Lernmethoden."
+			"heading": "StudyGrove-Schulungsprogramme können Ihnen ein super spannendes Online-Lernerlebnis bieten! Sie erleben keine negativen Erfahrungen, während Sie Ihre Kurse virtuell genießen, indem Sie in Ihrer Komfortzone sitzen. Unsere flexiblen Lerninitiativen helfen Ihnen, besser und schneller zu lernen als die traditionellen Lernmethoden."
 		},
 		"reviewMyWishlist": "Meine Wunschliste überprüfen",
 		"premiumAccess": {

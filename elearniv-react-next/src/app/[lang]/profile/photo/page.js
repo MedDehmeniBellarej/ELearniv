@@ -3,7 +3,7 @@ import Link from "next/link";
 import AvatarForm from "./AvatarForm";
 
 export const metadata = {
-	title: "Profile Photo | eLearniv - React Next.js Learning Management System",
+	title: "Profile Photo | StudyGrove - React Next.js Learning Management System",
 };
 
 const page = async ({ params: { lang } }) => {

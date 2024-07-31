@@ -36,8 +36,8 @@ const ContactInfo = () => {
 						</p>
 						<p>
 							Mail:{" "}
-							<a href="mailto:hello@eLearniv.com">
-								hello@eLearniv.com
+							<a href="mailto:hello@StudyGrove.com">
+								hello@StudyGrove.com
 							</a>
 						</p>
 					</li>

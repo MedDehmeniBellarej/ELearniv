@@ -9,7 +9,7 @@ import { getPartners } from "@/actions/admin/getPartners";
 import { getDictionary } from "../dictionaries";
 
 export const metadata = {
-	title: "About | eLearniv - React Next.js Learning Management System",
+	title: "About | StudyGrove - React Next.js Learning Management System",
 };
 
 const page = async ({ params: { lang } }) => {

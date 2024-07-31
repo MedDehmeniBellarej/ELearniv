@@ -5,7 +5,7 @@ import { getCurrentUser } from "@/actions/getCurrentUser";
 import { redirect } from "next/navigation";
 
 export const metadata = {
-	title: "Authentication | eLearniv - React Next.js Learning Management System",
+	title: "Authentication | StudyGrove - React Next.js Learning Management System",
 };
 
 const page = async ({ params: { lang } }) => {
