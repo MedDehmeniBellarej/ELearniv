@@ -10,6 +10,7 @@ import {
   Window
 } from 'stream-chat-react';
 import 'stream-chat-react/dist/css/index.css';
+import './style.css'; // Import your custom styles
 
 const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
 const chatClient = StreamChat.getInstance(apiKey);
@@ -44,10 +45,18 @@ const CourseChatChannelComponent = ({ currentUser, channelId }) => {
         console.log('Fetched token:', token);
         setUserToken(token);
 
-        await chatClient.connectUser(user, token);
-        console.log('User connected');
+        // Check if the user is already connected before calling connectUser
+        if (!chatClient.user || chatClient.user.id !== user.id) {
+          await chatClient.connectUser(user, token);
+          console.log('User connected');
+        }
 
-        const existingChannel = chatClient.channel('messaging', channelId);
+        const existingChannel = chatClient.channel('messaging', channelId ,
+          {
+            name: "Course Chat",
+            image: "Course Chat",
+          }
+        );
         
         // Check if the user is already a member before adding
         const channelState = await existingChannel.query();
@@ -78,13 +87,19 @@ const CourseChatChannelComponent = ({ currentUser, channelId }) => {
   if (loading) return <div>Loading...</div>;
   if (!userToken || !channel) return <div>Error initializing chat. Please try again later.</div>;
 
+  const CustomClasses = {
+    chat: 'custom-padding-zero ',
+    channel: 'custom-channel-class',
+    
+  };
+
   return (
     <div className="chat-wrapper">
-      <Chat client={chatClient} theme="messaging light">
-        <Channel channel={channel}>
+      <Chat client={chatClient} theme="messaging light"  > 
+          <Channel channel={channel}>
           <Window>
             <ChannelHeader />
-            <MessageList />
+            <MessageList  />
             <MessageInput />
           </Window>
         </Channel>
@@ -94,4 +109,3 @@ const CourseChatChannelComponent = ({ currentUser, channelId }) => {
 };
 
 export default CourseChatChannelComponent;
-

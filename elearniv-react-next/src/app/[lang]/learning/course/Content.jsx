@@ -78,7 +78,7 @@ const Content = ({ id, overview, reviews , discussions , currentUser }) => {
 			) : tab === "discussion" ? (
 				<CourseDiscussion courseId={id} discussions={discussions} />
 			) : tab === "chat" ? (
-				<CourseChatChannelComponent currentUser={currentUser} channelId={`course-${id}`} /> // Pass the course ID as the channel ID
+				<CourseChatChannelComponent currentUser={currentUser} channelId={`course-${id}`} /> 
 			) : (
 				<CourseOverview overview={overview} />
 			)}

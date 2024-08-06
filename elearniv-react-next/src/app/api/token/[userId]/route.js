@@ -2,8 +2,8 @@
 import { StreamChat } from 'stream-chat';
 
 // Setting up the Stream Chat server client with the API key and secret.
-const apiKey = '5hsaqrh4njww';
-const apiSecret = '4a4jjtgwb3h8u4ephxnk9t2f3ff9cxehdzkg2bf64zjz7ggtd8qsmkarkrp69kd5';
+const apiKey = 'dy3xky9ybjte';
+const apiSecret = 'qrq2s9pfkvrhzb2j9wfugnyt2c9836jpgzx892kfrck6a6xzrb4c2e7u9nvy79fe';
 const serverClient = StreamChat.getInstance(apiKey, apiSecret);
 
 // Exporting the default API handler function.

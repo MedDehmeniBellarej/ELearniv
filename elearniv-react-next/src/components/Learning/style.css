@@ -1,0 +1,16 @@
+/* style.css */
+
+.custom-padding-zero {
+    padding: 0;
+  }
+  
+  /* Additional custom styles can go here */
+.str-chat-channel.messaging .str-chat__main-panel {
+ padding: 0.5px ;
+ 
+}
+
+.chat-wrapper {
+    max-height: 30%; /* Set the height to 500px */
+    
+  }

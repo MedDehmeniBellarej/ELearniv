@@ -121,6 +121,10 @@ a {
   z-index: 1000;
 }
 
+.str-chat__main-panel{
+  padding : 0 ;
+}
+
 .overlay {
   position: fixed;
   top: 0;
